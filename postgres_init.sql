@@ -1,28 +1,27 @@
 CREATE TABLE databases (
 	id	SERIAL	PRIMARY KEY,
-	name	VARCHAR(32),
-	uri	VARCHAR(32),
-	username	VARCHAR(32),
-    pass	VARCHAR(32)
+	name	VARCHAR(32) NOT NULL,
+	uri	VARCHAR(32) NOT NULL,
+	username	VARCHAR(32) NOT NULL,
+    pass	VARCHAR(32) NOT NULL
 );
 
 CREATE TABLE schemas (
-	database_id	INTEGER,
+	database_id	INTEGER NOT NULL,
 	id	SERIAL	PRIMARY KEY,
-	name	VARCHAR(32),
-    table_id	INTEGER
+	name	VARCHAR(32) NOT NULL
 );
 
 CREATE TABLE tables (
-	schema_id	INTEGER,
+	schema_id	INTEGER NOT NULL,
 	id	SERIAL	PRIMARY KEY,
-	name	VARCHAR(32)
+	name	VARCHAR(32) NOT NULL
 );
 
 CREATE TABLE columns (
-	table_id	INTEGER,
+	table_id	INTEGER NOT NULL,
 	id	SERIAL	PRIMARY KEY,
-	name	VARCHAR(32)
+	name	VARCHAR(32) NOT NULL
 );
 
 CREATE DATABASE test;
